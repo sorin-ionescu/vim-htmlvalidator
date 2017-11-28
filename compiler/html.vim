@@ -24,7 +24,7 @@ endif
 let s:cpo_save = &cpo
 set cpo-=C
 
-CompilerSet makeprg=(echo\ '[%]';\ curl\ -s\ --connect-timeout\ 5\ -F\ laxtype=yes\ -F\ level=error\ -F\ out=gnu\ -F\ doc=@%\ https://validator.nu\ \\\|\ sed\ -e\ \'s/^\"[^\"]*\"://g\'\ -e\ \'s/^\\([0-9]*\\.[0-9]*\\)-[0-9]*\\.[0-9]*/\\1/g\')
+CompilerSet makeprg=(echo\ '[%]';\ curl\ -s\ --connect-timeout\ 5\ -F\ laxtype=yes\ -F\ level=error\ -F\ out=gnu\ -F\ doc=@\"%\"\ https://validator.nu\ \\\|\ sed\ -e\ \'s/^\"[^\"]*\"://g\'\ -e\ \'s/^\\([0-9]*\\.[0-9]*\\)-[0-9]*\\.[0-9]*/\\1/g\')
 CompilerSet errorformat=%+P[%f],%l.%c:\ %t%*[^:]:\ %m,%-Q
 
 let &cpo = s:cpo_save
